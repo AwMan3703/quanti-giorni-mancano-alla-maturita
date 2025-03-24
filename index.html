@@ -7,7 +7,23 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<p id="counter">100</p>
+	<header>
+		<h1>Giorni alla maturità 2025</h1>
+	</header>
+
+	<p id="calendar">
+		<span id="counter-past-days"></span>
+		<span id="counter" class="counter-element">...</span>
+		<span id="counter-future-days"></span>
+	</p>
+
+	<div>
+		<p>Cancellare fino a <span id="cross-out-counter">...</span>, compreso.</p>
+	</div>
+
+	<template id="counter-element-template">
+		<span class="counter-element">...</span>
+	</template>
 
 	<script src="index.js"></script>
 </body>

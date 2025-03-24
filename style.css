@@ -1,5 +1,36 @@
+body {
+  font-family: montserrat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#calendar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+#counter-past-days,
+#counter-future-days {
+  display: flex;
+  align-items: center;
+  gap: inherit;
+}
+.counter-element {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 15px;
+}
+#counter-past-days .counter-element {
+  color: rgba(0, 0, 0, 0.3);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><path d='M100 0 L0 100 ' stroke='rgba(0,0,0, .2)' stroke-width='3'/><path d='M0 0 L100 100 ' stroke='rgba(0,0,0, .2)' stroke-width='3'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%, auto;
+}
 #counter {
-  font-size: 10em;
-  font-weight: bold;
+  font-size: 11vw;
 }
 /*# sourceMappingURL=style.css.map */
