@@ -1,4 +1,5 @@
 // CONSTANTS
+const now = new Date()
 const millisecondsInADay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 const examDate = new Date(2025, 5, 18, 0, 0, 0)
 const calendar_size = 3
@@ -9,11 +10,12 @@ const counter_element_template = document.getElementById("counter-element-templa
 const counter_past = document.getElementById("counter-past-days")
 const counter = document.getElementById("counter")
 const counter_future = document.getElementById("counter-future-days")
+const todays_date = document.getElementById("todays-date")
 const counter_cross_out = document.getElementById("cross-out-counter")
 
 // FUNCTIONS
 function daysUntil(endDate) {
-	return Math.round((endDate - new Date()) / millisecondsInADay);
+	return Math.round((endDate - now) / millisecondsInADay);
 }
 
 function counter_element(n, i) {
@@ -31,7 +33,7 @@ const daysUntilExam = daysUntil(examDate)
 
 setTimeout(window.location.reload, // Reload at midnight because it's the next day
 	// Milliseconds until midnight
-	new Date().setHours(24, 0, 0, 0) - new Date())
+	new Date().setHours(24, 0, 0, 0) - now)
 
 
 for (let i = calendar_size; i > 0; i--)
@@ -43,4 +45,5 @@ counter.style.fontSize = calendar_fontSize.toString()
 for (let i = 1; i < calendar_size + 1; i++)
 	if (daysUntilExam - i > 0) counter_future.appendChild(counter_element(daysUntilExam - i, i))
 
+todays_date.innerText = `${now.getDate()} / ${now.getMonth()} / ${now.getFullYear()}`
 counter_cross_out.innerText = (daysUntilExam + 1).toString() // Cross out until yesterday
