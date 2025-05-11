@@ -45,5 +45,5 @@ counter.style.fontSize = calendar_fontSize.toString()
 for (let i = 1; i < calendar_size + 1; i++)
 	if (daysUntilExam - i > 0) counter_future.appendChild(counter_element(daysUntilExam - i, i))
 
-todays_date.innerText = `${now.getDate()} / ${now.getMonth() + 1} / ${now.getFullYear()}`
+todays_date.innerText = `${now.getDate().toString()[0]==="1" ? "l'" : "il"} ${now.getDate()} / ${now.getMonth() + 1} / ${now.getFullYear()}`
 counter_cross_out.innerText = (daysUntilExam + 1).toString() // Cross out until yesterday
