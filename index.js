@@ -1,4 +1,5 @@
 // CONSTANTS
+const months = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre']
 const now = new Date()
 const millisecondsInADay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 const examDate = new Date(2025, 5, 18, 12, 0, 0)
@@ -45,5 +46,6 @@ counter.style.fontSize = calendar_fontSize.toString()
 for (let i = 1; i < calendar_size + 1; i++)
 	if (daysUntilExam - i > 0) counter_future.appendChild(counter_element(daysUntilExam - i, i))
 
-todays_date.innerText = `${now.getDate().toString()[0]==="1" ? "l'" : "il"} ${now.getDate()} / ${now.getMonth() + 1} / ${now.getFullYear()}`
+if (now.getDate() === 1) todays_date.innerText = `il primo ${months[now.getMonth()]} ${now.getFullYear()}`
+else todays_date.innerText = `${[1, 8, 11].includes(now.getDate()) ? "l'" : "il"} ${now.getDate()} / ${now.getMonth() + 1} / ${now.getFullYear()}`
 counter_cross_out.innerText = (daysUntilExam + 1).toString() // Cross out until yesterday
