@@ -3,6 +3,7 @@ const months = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'l
 const now = new Date()
 const millisecondsInADay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 const examDate = new Date(2025, 5, 18, 12, 0, 0)
+const schoolYearEndDate = new Date(2025, 5, 8, 12, 0, 0)
 const calendar_size = 3
 const calendar_fontSize = visualViewport.width / 100 * 11
 
@@ -13,6 +14,7 @@ const counter = document.getElementById("counter")
 const counter_future = document.getElementById("counter-future-days")
 const todays_date = document.getElementById("todays-date")
 const counter_cross_out = document.getElementById("cross-out-counter")
+const school_year_end_countdown = document.getElementById("days-to-school-year-end")
 
 // FUNCTIONS
 function daysUntil(endDate) {
@@ -31,6 +33,7 @@ function counter_element(n, i) {
 
 // SCRIPT
 const daysUntilExam = daysUntil(examDate)
+const daysUntilSchoolYearEnd = daysUntil(schoolYearEndDate)
 
 setTimeout(window.location.reload, // Reload at midnight because it's the next day
 	// Milliseconds until midnight
@@ -49,3 +52,5 @@ for (let i = 1; i < calendar_size + 1; i++)
 if (now.getDate() === 1) todays_date.innerText = `il primo ${months[now.getMonth()]} ${now.getFullYear()}`
 else todays_date.innerText = `${[1, 8, 11].includes(now.getDate()) ? "l'" : "il"} ${now.getDate()} / ${now.getMonth() + 1} / ${now.getFullYear()}`
 counter_cross_out.innerText = (daysUntilExam + 1).toString() // Cross out until yesterday
+
+school_year_end_countdown.innerText = daysUntilSchoolYearEnd
