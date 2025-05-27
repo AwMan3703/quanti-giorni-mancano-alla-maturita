@@ -53,4 +53,4 @@ if (now.getDate() === 1) todays_date.innerText = `il primo ${months[now.getMonth
 else todays_date.innerText = `${[1, 8, 11].includes(now.getDate()) ? "l'" : "il"} ${now.getDate()} / ${now.getMonth() + 1} / ${now.getFullYear()}`
 counter_cross_out.innerText = (daysUntilExam + 1).toString() // Cross out until yesterday
 
-school_year_end_countdown.innerText = "Manca" (daysUntilSchoolYearEnd === 1 ? '' : 'no') + ' ' + daysUntilSchoolYearEnd + " giorn" + (daysUntilSchoolYearEnd === 1 ? 'o' : 'i')
+school_year_end_countdown.innerText = "Manca" + (daysUntilSchoolYearEnd === 1 ? '' : 'no') + ' ' + daysUntilSchoolYearEnd + " giorn" + (daysUntilSchoolYearEnd === 1 ? 'o' : 'i')
