@@ -3,7 +3,7 @@ const months = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'l
 const now = new Date()
 const millisecondsInADay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
 const examDate = new Date(2025, 5, 18, 12, 0, 0)
-const schoolYearEndDate = new Date(2025, 5, 7, 12, 0, 0)
+const schoolYearEndDate = new Date(2025, 5, 8, 12, 0, 0)
 const calendar_size = 3
 const calendar_fontSize = visualViewport.width / 100 * 11
 
