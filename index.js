@@ -55,4 +55,4 @@ counter_cross_out.innerText = (daysUntilExam + 1).toString() // Cross out until 
 
 school_year_end_countdown.innerText = daysUntilSchoolYearEnd >= 0
 ? "Manca" + (daysUntilSchoolYearEnd === 1 ? '' : 'no') + ' ' + daysUntilSchoolYearEnd + " giorn" + (daysUntilSchoolYearEnd === 1 ? 'o' : 'i') + " alla fine della scuola."
-: "La scuola è finita da " + daysUntilSchoolYearEnd + " giorn" + (daysUntilSchoolYearEnd === 1 ? 'o' : 'i') + "."
+: "La scuola è finita da " + Math.abs(daysUntilSchoolYearEnd) + " giorn" + (daysUntilSchoolYearEnd === 1 ? 'o' : 'i') + "."
