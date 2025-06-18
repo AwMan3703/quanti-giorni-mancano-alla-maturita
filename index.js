@@ -32,7 +32,7 @@ function counter_element(n, i) {
 }
 
 // SCRIPT
-const daysUntilExam = daysUntil(examDate)
+const daysUntilExam = Math.max(0, daysUntil(examDate))
 const daysUntilSchoolYearEnd = daysUntil(schoolYearEndDate)
 
 setTimeout(window.location.reload, // Reload at midnight because it's the next day
